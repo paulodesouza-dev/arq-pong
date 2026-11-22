@@ -6,7 +6,7 @@ Sua raquete é a **CPU**, a do adversário é a **Memória** e a bola é um **da
 trafegando pelo barramento. Deixou o dado passar? Responda uma pergunta sobre o
 conteúdo para recuperá-lo, ou o ponto vai para o adversário.
 
-👉 **Jogue agora:** https://SEU-USUARIO.github.io/arq-pong
+👉 **Jogue agora:** https://paulodesouza-dev.github.io/arq-pong
 
 ## 🎯 Objetivo
 
@@ -47,4 +47,4 @@ que um quiz tradicional.
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/SEU-USUARIO/arq-pong.git
+   git clone https://github.com/paulodesouza-dev/arq-pong.git
