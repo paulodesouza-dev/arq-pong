@@ -47,4 +47,15 @@ que um quiz tradicional.
 
 1. Clone o repositório:
    ```bash
-   https://github.com/paulodesouza-dev/arq-pong.git
+   git clone https://github.com/paulodesouza-dev/arq-pong.git
+   ```
+2. Abra o arquivo `index.html` no navegador. Pronto, não precisa instalar nada!
+
+## 📁 Estrutura
+
+```
+index.html     → estrutura da página e das telas
+style.css      → visual do jogo
+game.js        → lógica do Pong, IA da Memória e fluxo de perguntas
+questions.js   → banco de perguntas (fácil de editar e ampliar)
+```

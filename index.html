@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Arq Pong</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Céu, colinas e bolhas decorativas -->
+  <div class="scenery" aria-hidden="true">
+    <div class="sun"></div>
+    <div class="hill hill-back"></div>
+    <div class="hill hill-front"></div>
+    <div class="bubbles">
+      <span style="--s:70px;--l:6%;--t:19s;--d:-2s"></span>
+      <span style="--s:28px;--l:14%;--t:13s;--d:-9s"></span>
+      <span style="--s:46px;--l:23%;--t:16s;--d:-5s"></span>
+      <span style="--s:18px;--l:31%;--t:11s;--d:-1s"></span>
+      <span style="--s:90px;--l:42%;--t:24s;--d:-14s"></span>
+      <span style="--s:24px;--l:52%;--t:12s;--d:-6s"></span>
+      <span style="--s:56px;--l:61%;--t:18s;--d:-11s"></span>
+      <span style="--s:20px;--l:70%;--t:10s;--d:-3s"></span>
+      <span style="--s:74px;--l:79%;--t:21s;--d:-8s"></span>
+      <span style="--s:32px;--l:88%;--t:14s;--d:-12s"></span>
+      <span style="--s:50px;--l:95%;--t:17s;--d:-4s"></span>
+    </div>
+  </div>
+
+  <main id="app">
+    <header class="hud">
+      <div class="pill side cpu">
+        <span class="orb orb-cpu"></span>
+        <span class="label">CPU <small>(você)</small></span>
+        <span id="score-cpu" class="score">0</span>
+      </div>
+      <div class="center-info">
+        <span id="streak" class="pill small">Sequência: 0</span>
+        <span id="powerup" class="pill small power hidden">Raquete turbinada!</span>
+      </div>
+      <div class="pill side mem">
+        <span id="score-mem" class="score">0</span>
+        <span class="label">Memória</span>
+        <span class="orb orb-mem"></span>
+      </div>
+    </header>
+
+    <div id="stage">
+      <canvas id="game" width="800" height="500"></canvas>
+
+      <!-- Tela inicial -->
+      <section id="screen-start" class="overlay">
+        <div class="card">
+          <h1 class="logo">Arq Pong</h1>
+          <p class="tagline">Arquitetura Computacional em ritmo de bolhas</p>
+          <p>Sua raquete é a <b class="c-cpu">CPU</b>, a do adversário é a <b class="c-mem">Memória</b>
+            e a bolha é um <b class="c-data">dado</b> trafegando pelo data bus.</p>
+          <p>Deixou o dado passar? Responda uma pergunta da aula para recuperá-lo!</p>
+          <ul class="rules">
+            <li>Mover: <kbd>↑</kbd> <kbd>↓</kbd> / <kbd>W</kbd> <kbd>S</kbd> ou arraste na tela</li>
+            <li>Responder: <kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> ou toque na opção</li>
+            <li>Vence quem fizer <b>7 pontos</b></li>
+            <li><b>3 acertos seguidos</b> deixam sua raquete maior por um tempo</li>
+          </ul>
+          <button id="btn-start" class="btn">Jogar</button>
+        </div>
+      </section>
+
+      <!-- Pergunta -->
+      <section id="screen-question" class="overlay hidden">
+        <div class="card question-card">
+          <div class="q-top">
+            <span id="q-topic" class="topic"></span>
+            <span id="q-time" class="time">10</span>
+          </div>
+          <div class="timer-bar"><div id="q-bar"></div></div>
+          <h2 id="q-text"></h2>
+          <div id="q-options" class="options"></div>
+          <div id="q-feedback" class="feedback hidden"></div>
+          <button id="btn-continue" class="btn hidden">Continuar</button>
+        </div>
+      </section>
+
+      <!-- Fim de jogo / revisão -->
+      <section id="screen-end" class="overlay hidden">
+        <div class="card end-card">
+          <h1 id="end-title" class="logo"></h1>
+          <p id="end-stats" class="stats"></p>
+          <h3>Revisão</h3>
+          <div id="review" class="review"></div>
+          <button id="btn-restart" class="btn">Jogar de novo</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="questions.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
