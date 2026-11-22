@@ -43,6 +43,12 @@ que um quiz tradicional.
 - CSS3
 - JavaScript puro, sem bibliotecas nem instalação
 
+## Uso de IA
+
+Este jogo foi desenvolvido com o auxílio de agentes de inteligência artificial,
+que ajudaram na programação, no visual e na escrita das perguntas. O conteúdo
+foi revisado com base no material da disciplina.
+
 ## Como rodar localmente
 
 1. Clone o repositório:
